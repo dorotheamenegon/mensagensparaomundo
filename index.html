@@ -1,4 +1,5 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#9e1830"><meta name="description" content="Acervo de mensagens com transcrições em português, notas bíblicas, históricas e devocionais"><title>Mensagens para o Mundo — revisão de 12–13/10 e 12–13/11/2026</title><style>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#9e1830">
+<link rel="manifest" href="manifest.json"><meta name="description" content="Acervo de mensagens com transcrições em português, notas bíblicas, históricas e devocionais"><title>Mensagens para o Mundo — revisão de 12–13/10 e 12–13/11/2026</title><style>
 :root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 --cream:#fbefd3;--cream2:#f5dfae;--paper:#fffaee;--red:#9e1830;--red2:#6f0f21;--gold:#d49a10;--gold2:#8a5a05;--ink:#3b2414;--soft:#7a5a3a;--pink:#f6d6cf;--ivory:#fffdf5;--line:#e0bf7c;--olive:#6a5410;--fs:19px}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 96px)}
@@ -309,4 +310,9 @@ const origDialog=$('#original-dialog'); if(origDialog){origDialog.addEventListen
 
 }
 
-</script></body></html>
+</script><script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function(){});
+}
+</script>
+</body></html>
