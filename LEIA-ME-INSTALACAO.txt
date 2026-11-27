@@ -1,0 +1,17 @@
+MENSAGENS PARA O MUNDO — PWA COM INSTALAÇÃO DIRETA
+
+O botão “Instalar app” agora tenta abrir imediatamente a confirmação nativa do navegador.
+
+COMO PUBLICAR
+1. Envie TODOS os arquivos desta pasta para a raiz do repositório GitHub Pages.
+2. Mantenha index.html, manifest.json, sw.js e os três ícones na mesma pasta.
+3. Ative o GitHub Pages e aguarde a publicação em HTTPS.
+4. Abra o endereço publicado em Chrome, Edge ou Brave compatível e toque em “Instalar app”. O navegador exibirá a confirmação nativa quando a instalação estiver disponível.
+
+QUANDO O PROMPT DIRETO NÃO APARECER
+- O navegador pode ainda não considerar o site instalável, ou pode não oferecer o evento de instalação. Nesse caso, o botão abre instruções.
+- No iPhone/iPad, a instalação é manual no Safari: Compartilhar > Adicionar à Tela de Início.
+- Em alguns navegadores Android, use o menu > Instalar app ou Adicionar à tela inicial.
+
+IMPORTANTE
+Um arquivo HTML aberto localmente (file://) não pode instalar-se como PWA. A instalação exige o site publicado em HTTPS. A disponibilidade do prompt depende do navegador e do dispositivo; o código não pode forçar a confirmação em navegadores que não disponibilizam esse recurso.

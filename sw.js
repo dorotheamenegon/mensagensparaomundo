@@ -1,27 +1,26 @@
-const CACHE = "mensagens-v1";
-const ARQUIVOS = ["./", "./index.html", "./manifest.json"];
-
-self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ARQUIVOS)));
-  self.skipWaiting();
+const CACHE_NAME = 'mensagens-para-o-mundo-v1';
+const APP_SHELL = ['./index.html', './manifest.json', './icon-192.png', './icon-512.png', './icon-180.png'];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
 });
-
-self.addEventListener("activate", (e) => {
-  e.waitUntil(
-    caches.keys().then((chaves) =>
-      Promise.all(chaves.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
-    )
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
 });
-
-self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    fetch(e.request)
-      .then((r) => {
-        const copia = r.clone();
-        caches.open(CACHE).then((c) => c.put(e.request, copia));
-        return r;
-      })
-      .catch(() => caches.match(e.request))
-  );
+self.addEventListener('fetch', event => {
+  const req = event.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;
+  if (req.mode === 'navigate') {
+    event.respondWith(fetch(req).then(response => {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy));
+      return response;
+    }).catch(() => caches.match('./index.html')));
+    return;
+  }
+  event.respondWith(caches.match(req).then(cached => cached || fetch(req).then(response => {
+    if (response && response.ok) { const copy=response.clone(); caches.open(CACHE_NAME).then(cache=>cache.put(req,copy)); }
+    return response;
+  })));
 });
