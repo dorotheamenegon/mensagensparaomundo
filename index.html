@@ -157,6 +157,86 @@ sup.nr{font:700 12px 'Source Sans 3';color:#fff;background:var(--red);border-rad
 #pwa-install-now{background:#a67b23;color:#fff}
 #pwa-install-now[hidden]{display:none}
 @media(max-width:520px){#pwa-install-btn{right:8px;top:7px;padding:7px 9px;font-size:12px}.top .brand{padding-left:10px;padding-right:122px;font-size:15px}.pwa-install-head{padding:20px 18px 15px}.pwa-install-body{padding:13px 14px 16px}.pwa-how{padding:10px 11px}}
+
+
+/* Layout responsivo ampliado: melhor aproveitamento de tela em desktop e celular */
+main{
+  width:min(1400px, calc(100% - clamp(40px, 8vw, 144px)));
+  max-width:none;
+  margin-inline:auto;
+  padding:0 0 max(40px, env(safe-area-inset-bottom, 0px));
+}
+.hero{padding:clamp(24px,3vw,42px) clamp(18px,3vw,42px) clamp(22px,2.8vw,38px)}
+.hero h1{font-size:clamp(30px,3.5vw,46px)}
+.setor{padding:clamp(16px,2vw,28px) clamp(16px,2.3vw,34px) clamp(20px,2.5vw,34px)}
+.pad{padding:clamp(14px,2vw,28px)}
+.rd{padding:clamp(12px,1.8vw,24px) clamp(12px,2vw,28px) 0}
+.rd>div:not(.nav2){width:100%;max-width:1160px;margin-inline:auto}
+.quadro{width:100%;max-width:100%;margin-inline:auto;padding:clamp(13px,1.5vw,20px) clamp(14px,1.8vw,24px);font-size:clamp(17px,1.25vw,19px);line-height:1.48}
+.notas{width:100%;max-width:100%;margin-inline:auto}
+.nav2{max-width:1160px;margin:18px auto}
+.nums{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tri{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{padding:12px 15px}
+.card p{line-height:1.45}
+.rk button{padding:9px 12px}
+.busca{max-width:100%}
+
+@media(max-width:900px){
+  main{width:calc(100% - 36px)}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .setor{padding:16px 16px 20px}
+  .rd{padding:12px 10px 0}
+  .rd>div:not(.nav2){max-width:100%}
+  .quadro{font-size:18px;line-height:1.44}
+}
+@media(max-width:600px){
+  main{width:calc(100% - 14px);padding-bottom:28px}
+  .hero{padding:22px 12px 18px}
+  .hero h1{font-size:clamp(25px,7vw,33px)}
+  .hero p{font-size:14px;line-height:1.4}
+  .roses{gap:10px;margin-top:12px}
+  .roses div{width:82px;font-size:12px}
+  .roses svg{width:48px;height:48px}
+  .setor{padding:13px 11px 16px}
+  .setor>h2{font-size:19px}
+  .pad{padding:12px 10px}
+  .rd{padding:9px 5px 0}
+  .rd .dt{font-size:clamp(24px,7vw,30px)}
+  .quadro{padding:10px 11px;font-size:16.5px;line-height:1.42;text-align:left}
+  .quadro p{text-align:left}
+  .notas{font-size:13px}
+  .nt{font-size:13px;padding:5px 8px}
+  .nt .tx{text-align:left;line-height:1.4}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .num{padding:8px}
+  .num b{font-size:23px}
+  .tri{grid-template-columns:1fr;gap:7px}
+  .tools{gap:5px}
+  .tools button{padding:7px 9px;font-size:14px}
+  .nav2{gap:6px;margin:12px 0}
+  .nav2 a{padding:9px 7px;font-size:14px}
+  .tabs{padding:0 5px;gap:0}
+  .tabs a{padding:8px 9px;font-size:14px}
+  .tabs a.sec{font-size:12px}
+  .card{padding:10px 11px}
+  .busca{gap:5px}
+  input[type=search],.busca input{font-size:16px;padding:9px 10px}
+}
+@media(max-width:380px){
+  main{width:calc(100% - 10px)}
+  .top .brand{font-size:14px;padding-right:116px}
+  #pwa-install-btn{font-size:11px;padding:6px 8px}
+  .tabs a{padding:7px 7px;font-size:13px}
+  .nums{grid-template-columns:1fr 1fr}
+  .quadro{font-size:15.5px}
+}
+@media(min-width:1500px){
+  .setor>h2{font-size:23px}
+  .sub{font-size:16px}
+  .card .d{font-size:20px}
+}
+
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="rose" viewBox="0 0 48 48"><g fill="var(--rc)" stroke="var(--rs)" stroke-width="1.6"><circle cx="24" cy="9" r="8"/><circle cx="38" cy="19" r="8"/><circle cx="33" cy="36" r="8"/><circle cx="15" cy="36" r="8"/><circle cx="10" cy="19" r="8"/><circle cx="24" cy="24" r="10"/></g><g fill="none" stroke="var(--rs)" stroke-width="1.6" stroke-linecap="round"><path d="M18 24a6 6 0 0 1 11-3"/><path d="M29 21a4 4 0 0 1-5 6"/><path d="M24 27a2 2 0 0 1 0-3"/></g></symbol>
