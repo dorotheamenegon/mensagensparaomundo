@@ -1,17 +1,27 @@
-MENSAGENS PARA O MUNDO — PWA COM INSTALAÇÃO DIRETA
+MENSAGENS PARA O MUNDO — ATUALIZADO ATÉ 01/08/2026
 
-O botão “Instalar app” agora tenta abrir imediatamente a confirmação nativa do navegador.
+Este pacote contém:
+- index.html: acervo acumulativo com as mensagens revisadas até 01/08/2026.
+- manifest.json: identificação do aplicativo instalável.
+- sw.js: serviço de cache offline (versão v6 para renovar o cache dos dispositivos).
+- icon-180.png, icon-192.png e icon-512.png: ícones do aplicativo.
 
-COMO PUBLICAR
-1. Envie TODOS os arquivos desta pasta para a raiz do repositório GitHub Pages.
-2. Mantenha index.html, manifest.json, sw.js e os três ícones na mesma pasta.
-3. Ative o GitHub Pages e aguarde a publicação em HTTPS.
-4. Abra o endereço publicado em Chrome, Edge ou Brave compatível e toque em “Instalar app”. O navegador exibirá a confirmação nativa quando a instalação estiver disponível.
+ATUALIZAÇÃO DESTA VERSÃO
+- Mensagem de Nossa Senhora de 01/08/2026: transcrição portuguesa integral cotejada com as versões italiana e inglesa, texto italiano disponível para consulta e 16 notas explicativas.
+- Notas sobre a Natividade de Maria, a comemoração de 5 de agosto no Santuário, o Magnificat, o plano de Deus, a missão de Maria, a santidade, a Confissão, a Eucaristia, a intercessão, o Rosário, a oração comunitária e a liturgia de Santo Afonso.
+- O acervo histórico Mensagens para o Mundo.pdf foi consultado para relacionar as mensagens de 5 de agosto de 2009, 2010, 2011, 2012 e 2015.
+- A mensagem de 05/08/2026 foi relacionada como continuidade do encontro celebrado.
+- Layout responsivo, botão de instalação direta, pesquisa, navegação e notas anteriores preservados.
 
-QUANDO O PROMPT DIRETO NÃO APARECER
-- O navegador pode ainda não considerar o site instalável, ou pode não oferecer o evento de instalação. Nesse caso, o botão abre instruções.
-- No iPhone/iPad, a instalação é manual no Safari: Compartilhar > Adicionar à Tela de Início.
-- Em alguns navegadores Android, use o menu > Instalar app ou Adicionar à tela inicial.
+PUBLICAÇÃO NO GITHUB PAGES
+1. Extraia todos os arquivos.
+2. Envie todos os arquivos juntos para a pasta publicada pelo GitHub Pages.
+3. Mantenha index.html na raiz da pasta publicada.
+4. Aguarde a publicação e abra o endereço HTTPS.
+5. Atualize a página. O novo cache v6 substitui o anterior.
 
-IMPORTANTE
-Um arquivo HTML aberto localmente (file://) não pode instalar-se como PWA. A instalação exige o site publicado em HTTPS. A disponibilidade do prompt depende do navegador e do dispositivo; o código não pode forçar a confirmação em navegadores que não disponibilizam esse recurso.
+INSTALAÇÃO
+- Computador/Android: use o botão “Instalar app” no cabeçalho; o navegador apresentará a confirmação quando suportado.
+- iPhone/iPad: no Safari, toque em Compartilhar e depois em “Adicionar à Tela de Início”.
+
+A instalação PWA exige publicação em HTTPS (ou localhost durante desenvolvimento). O HTML aberto diretamente como arquivo local não pode instalar o PWA nem usar o serviço offline.
